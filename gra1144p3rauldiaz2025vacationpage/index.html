@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hotel Site | Raul Diaz, 2025</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <style>
+        body {
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url("night.jpg");
+}
+        header {
+            background: #05c7f2;
+            padding: 10px 20px;
+        }
+        .logo {
+            max-width: 200px;
+        }
+        .wrapper {
+            max-width: 1200px;
+            margin: 20px auto;
+            background: rgba(0, 128, 128, 0.7);
+            border-radius: 15px;
+            padding: 20px;
+        }
+        #Tabs1 ul {
+            background: transparent;
+            border: none;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+        }
+        #Tabs1 li {
+            margin: 5px;
+            background: rgba(255, 255, 255, 0.3);
+            border: 2px solid #fff;
+            border-radius: 10px;
+            transition: background 0.3s;
+        }
+        #Tabs1 li:hover {
+            background: #ff6f61;
+        }
+        #Tabs1 a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            display: block;
+            font-size: 1.2em;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #ff6f61;
+            border-radius: 10px;
+            font-family: 'Pacifico', cursive;
+            font-size: 1em;
+        }
+        .section {
+            width: 48%;
+            display: inline-block;
+            vertical-align: top;
+            margin-right: 1%;
+        }
+        .submit {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 10px;
+            background: #ff6f61;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .submit:hover {
+            background: #e55a50;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #fff;
+            font-size: 0.9em;
+        }
+        @media (max-width: 768px) {
+            .section {
+                width: 100%;
+            }
+            #Tabs1 ul {
+                flex-direction: column;
+            }
+        }
+		footer {
+    color: #FFFFFF;
+    font-family: oswald, sans-serif;
+    padding: 4px 16px;
+    background-color: rgba(0,0,0,0.50);
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo.webp" alt="Hotel Logo" class="logo">
+    </header>
+    <div class="wrapper">
+        <div id="Tabs1">
+            <ul>
+                <li><a href="#tabs-1"><img src="flight.png" alt="Flights" width="40"> Flights</a></li>
+                <li><a href="#tabs-2"><img src="hotel.png" alt="Hotels" width="40"> Hotels</a></li>
+                <li><a href="#tabs-3"><img src="car.png" alt="Cars" width="40"> Cars</a></li>
+                <li><a href="#tabs-4"><img src="cruise.png" alt="Cruises" width="40"> Cruises</a></li>
+                <li><a href="#tabs-5"><img src="vacation.png" alt="Activities" width="40"> Things to do</a></li>
+            </ul>
+            <div id="tabs-1">
+                <input type="text" placeholder="Going to">
+                <div class="section">
+                    <input type="date" placeholder="Check in">
+                </div>
+                <div class="section">
+                    <input type="date" placeholder="Check out">
+                </div>
+                <select>
+                    <option value="0">Number of Travelers</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <input type="text" placeholder="Special Accommodations">
+                <input type="submit" class="submit" value="Search Flights">
+            </div>
+            <div id="tabs-2">
+                <input type="text" placeholder="Select your Room">
+                <div class="section">
+                    <input type="date" placeholder="Check in">
+                </div>
+                <div class="section">
+                    <input type="date" placeholder="Check out">
+                </div>
+                <select>
+                    <option value="0">Number of Guests</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <input type="submit" class="submit" value="Search Hotels">
+            </div>
+            <div id="tabs-3">
+                <input type="text" placeholder="Pick-up Location">
+                <input type="text" placeholder="Drop-off Location">
+                <div class="section">
+                    <input type="date" placeholder="Pick-up Date">
+                </div>
+                <div class="section">
+                    <input type="date" placeholder="Drop-off Date">
+                </div>
+                <select>
+                    <option value="0">Number of Car Seats</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+                <input type="submit" class="submit" value="Search Cars">
+            </div>
+            <div id="tabs-4">
+                <input type="text" placeholder="Departure Place">
+                <input type="text" placeholder="Destination Place">
+                <div class="section">
+                    <input type="date" placeholder="Departure Date">
+                </div>
+                <div class="section">
+                    <input type="date" placeholder="Return Date">
+                </div>
+                <select>
+                    <option value="0">Number of Travelers</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <input type="submit" class="submit" value="Search Cruises">
+            </div>
+            <div id="tabs-5">
+                <input type="text" placeholder="Activities">
+                <input type="text" placeholder="Museums">
+                <input type="text" placeholder="Other Options">
+                <input type="date" placeholder="Date">
+                <input type="submit" class="submit" value="Search Activities">
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>© 2025, Raul Diaz</p>
+        <p>This is a fictitious web page created for educational purposes.</p>
+    </footer>
+    <script>
+        $(function() {
+            $("#Tabs1").tabs();
+        });
+    </script>
+</body>
+</html>
