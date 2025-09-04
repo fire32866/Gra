@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>SVG ROLLOVER</title>
+<style>
+  body {
+    margin: 0;
+    font-family: sans-serif;
+    background: radial-gradient(circle at 50% 20%, #0a0a1a, #000);
+    color: white;
+    text-align: center;
+  }
+  h1 { margin: 20px 0; }
+  svg { width: 95%; max-width: 900px; height: 550px; background: #111; }
+  .label, .facts {
+    opacity: 0;
+    pointer-events: none;
+  }
+  .label { font-size: 16px; fill:white; }
+  .facts { font-size: 14px; fill:#fffae0; }
+  .galaxy:hover .label, .galaxy:hover .facts { opacity: 1; }
+  footer {
+    font-size: 12px;
+    color: #aaa;
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    line-height: 1.4;
+  }
+</style>
+</head>
+<body>
+  <h1>Colorful Galaxies — Hover to Learn</h1>
+<svg viewBox="0 0 900 550" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <radialGradient id="mwGrad" cx="50%" cy="50%" r="60%">
+        <stop offset="0%" stop-color="#fff176"/>
+        <stop offset="100%" stop-color="#1565c0" stop-opacity="0.2"/>
+      </radialGradient>
+      <radialGradient id="andGrad" cx="50%" cy="50%" r="60%">
+        <stop offset="0%" stop-color="#bb86fc"/>
+        <stop offset="100%" stop-color="#3700b3" stop-opacity="0.4"/>
+      </radialGradient>
+      <radialGradient id="triGrad" cx="50%" cy="50%" r="60%">
+        <stop offset="0%" stop-color="#80d8ff"/>
+        <stop offset="100%" stop-color="#004d40" stop-opacity="0.3"/>
+      </radialGradient>
+    </defs>
+
+    < Milky Way>
+    <g class="galaxy" transform="translate(200,280)">
+      <ellipse rx="80" ry="40" fill="url(#mwGrad)" />
+      <rect x="-20" y="-8" width="40" height="16" fill="#ffeb3b" opacity="0.8"/>
+      <text class="label" x="0" y="70" text-anchor="middle">Milky Way</text>
+      <text class="facts" x="0" y="90" text-anchor="middle">Barred Spiral · ~100,000 ly</text>
+    </g>
+
+    < Andromeda >
+    <g class="galaxy" transform="translate(450,220)">
+      <ellipse rx="100" ry="50" fill="url(#andGrad)" />
+      <text class="label" x="0" y="70" text-anchor="middle">Andromeda</text>
+      <text class="facts" x="0" y="90" text-anchor="middle">Spiral · 2.5 million ly away</text>
+    </g>
+
+    < Triangulum >
+    <g class="galaxy" transform="translate(700,330)">
+      <ellipse rx="60" ry="35" fill="url(#triGrad)" />
+      <text class="label" x="0" y="60" text-anchor="middle">Triangulum</text>
+      <text class="facts" x="0" y="80" text-anchor="middle">Spiral · ~60,000 ly</text>
+    </g>
+  </svg>
+
+  <footer>
+    © 2025,Raul Diaz <br>
+    This is a fictitious web page created solely for the purpose of education and training. 
+    All products and people associated with this web page are also fictitious. Any resemblance 
+    to real brands, products, or people is purely coincidental. Information provided about the 
+    product is also fictitious and should not be construed to be representative of actual 
+    products on the market in a similar product category.
+  </footer>
+</body>
+</html>
