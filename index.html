@@ -1,84 +1,106 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>SVG ROLLOVER</title>
-<style>
-  body {
-    margin: 0;
-    font-family: sans-serif;
-    background: radial-gradient(circle at 50% 20%, #0a0a1a, #000);
-    color: white;
-    text-align: center;
-  }
-  h1 { margin: 20px 0; }
-  svg { width: 95%; max-width: 900px; height: 550px; background: #111; }
-  .label, .facts {
-    opacity: 0;
-    pointer-events: none;
-  }
-  .label { font-size: 16px; fill:white; }
-  .facts { font-size: 14px; fill:#fffae0; }
-  .galaxy:hover .label, .galaxy:hover .facts { opacity: 1; }
-  footer {
-    font-size: 12px;
-    color: #aaa;
-    padding: 20px;
-    max-width: 900px;
-    margin: 0 auto;
-    line-height: 1.4;
-  }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duck Hunt Animation</title>
+    <style>
+        body {
+            margin: 0;
+            background-image: url('background.jpg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            overflow: hidden;
+            cursor: url('duck-cursor.png'), auto; /* 👈 Custom duck cursor */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .flapping-duck {
+            width: 250px;
+            height: auto;
+            position: absolute;
+        }
+
+        #flapping-duck-1 {
+            animation: flyAcross-1 12s linear infinite;
+        }
+
+        #flapping-duck-2 {
+            animation: flyAcross-2 15s linear infinite;
+        }
+
+        @keyframes flyAcross-1 {
+            0% { transform: translate(-250px, 15vh) scaleX(1); }
+            49% { transform: translate(calc(50vw - 125px), 25vh) scaleX(1); }
+            50% { transform: translate(calc(50vw - 125px), 25vh) scaleX(-1); }
+            99% { transform: translate(-250px, 20vh) scaleX(-1); }
+            100% { transform: translate(-250px, 20vh) scaleX(1); }
+        }
+
+        @keyframes flyAcross-2 {
+            0% { transform: translate(calc(100vw + 250px), 60vh) scaleX(-1); }
+            49% { transform: translate(calc(50vw - 125px), 50vh) scaleX(-1); }
+            50% { transform: translate(calc(50vw - 125px), 50vh) scaleX(1); }
+            99% { transform: translate(calc(100vw + 250px), 65vh) scaleX(1); }
+            100% { transform: translate(calc(100vw + 250px), 65vh) scaleX(-1); }
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            font-size: 12px;
+            text-align: center;
+            padding: 10px;
+            line-height: 1.4;
+        }
+    </style>
 </head>
 <body>
-  <h1>Colorful Galaxies — Hover to Learn</h1>
-<svg viewBox="0 0 900 550" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <radialGradient id="mwGrad" cx="50%" cy="50%" r="60%">
-        <stop offset="0%" stop-color="#fff176"/>
-        <stop offset="100%" stop-color="#1565c0" stop-opacity="0.2"/>
-      </radialGradient>
-      <radialGradient id="andGrad" cx="50%" cy="50%" r="60%">
-        <stop offset="0%" stop-color="#bb86fc"/>
-        <stop offset="100%" stop-color="#3700b3" stop-opacity="0.4"/>
-      </radialGradient>
-      <radialGradient id="triGrad" cx="50%" cy="50%" r="60%">
-        <stop offset="0%" stop-color="#80d8ff"/>
-        <stop offset="100%" stop-color="#004d40" stop-opacity="0.3"/>
-      </radialGradient>
-    </defs>
 
-    < Milky Way>
-    <g class="galaxy" transform="translate(200,280)">
-      <ellipse rx="80" ry="40" fill="url(#mwGrad)" />
-      <rect x="-20" y="-8" width="40" height="16" fill="#ffeb3b" opacity="0.8"/>
-      <text class="label" x="0" y="70" text-anchor="middle">Milky Way</text>
-      <text class="facts" x="0" y="90" text-anchor="middle">Barred Spiral · ~100,000 ly</text>
-    </g>
+    <img id="flapping-duck-1" class="flapping-duck" src="duck-wings-up.png.png" alt="">
+    <img id="flapping-duck-2" class="flapping-duck" src="duck-wings-up.png.png" alt="">
 
-    < Andromeda >
-    <g class="galaxy" transform="translate(450,220)">
-      <ellipse rx="100" ry="50" fill="url(#andGrad)" />
-      <text class="label" x="0" y="70" text-anchor="middle">Andromeda</text>
-      <text class="facts" x="0" y="90" text-anchor="middle">Spiral · 2.5 million ly away</text>
-    </g>
+    <footer>
+        © 2025, Raul Diaz <br>
+        This is a fictitious web page created solely for the purpose of education and training. 
+        All products and people associated with this web page are also fictitious. 
+        Any resemblance to real brands, products, or people is purely coincidental. 
+        Information provided about the product is also fictitious and should not be construed 
+        to be representative of actual products on the market in a similar product category.
+    </footer>
 
-    < Triangulum >
-    <g class="galaxy" transform="translate(700,330)">
-      <ellipse rx="60" ry="35" fill="url(#triGrad)" />
-      <text class="label" x="0" y="60" text-anchor="middle">Triangulum</text>
-      <text class="facts" x="0" y="80" text-anchor="middle">Spiral · ~60,000 ly</text>
-    </g>
-  </svg>
+    <script>
+        // Duck 1 Animation
+        const duckImage1 = document.getElementById('flapping-duck-1');
+        const wingsUpSrc1 = 'duck-wings-up.png.png';
+        const wingsDownSrc1 = 'duck-wings-down.png.png';
+        let isWingsUp1 = true;
 
-  <footer>
-    © 2025,Raul Diaz <br>
-    This is a fictitious web page created solely for the purpose of education and training. 
-    All products and people associated with this web page are also fictitious. Any resemblance 
-    to real brands, products, or people is purely coincidental. Information provided about the 
-    product is also fictitious and should not be construed to be representative of actual 
-    products on the market in a similar product category.
-  </footer>
+        function flapWings1() {
+            duckImage1.src = isWingsUp1 ? wingsDownSrc1 : wingsUpSrc1;
+            isWingsUp1 = !isWingsUp1;
+        }
+        setInterval(flapWings1, 200);
+
+        // Duck 2 Animation
+        const duckImage2 = document.getElementById('flapping-duck-2');
+        const wingsUpSrc2 = 'duck-wings-up.png.png';
+        const wingsDownSrc2 = 'duck-wings-down.png.png';
+        let isWingsUp2 = true;
+
+        function flapWings2() {
+            duckImage2.src = isWingsUp2 ? wingsDownSrc2 : wingsUpSrc2;
+            isWingsUp2 = !isWingsUp2;
+        }
+        setInterval(flapWings2, 200);
+    </script>
+
 </body>
 </html>
